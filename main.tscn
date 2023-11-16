@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8gn47s3vhw4t"]
+[gd_scene load_steps=13 format=3 uid="uid://b8gn47s3vhw4t"]
 
 [ext_resource type="ArrayMesh" uid="uid://cn4agsrpvu4c6" path="res://addons/kaykit_prototype_bits/Assets/obj/Floor.obj" id="1_sjfr3"]
 [ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="3_w8osi"]
 [ext_resource type="Material" uid="uid://dvi12pic7qs5l" path="res://brick.tres" id="5_abt2d"]
 [ext_resource type="BoxMesh" uid="uid://cyt4e734j3o77" path="res://bricc3.tres" id="5_epy6x"]
 [ext_resource type="Material" uid="uid://bkud7opk6rm1y" path="res://concrete.tres" id="6_40bnd"]
-[ext_resource type="PackedScene" uid="uid://c2ik4ced0bxw4" path="res://gAEme/models/stagelight.glb" id="6_nes0j"]
+[ext_resource type="PackedScene" uid="uid://c2ik4ced0bxw4" path="res://gAEme/glb/stagelight.glb" id="6_nes0j"]
 [ext_resource type="PackedScene" uid="uid://gp4fw66qnvs6" path="res://gAEme/models/barrel.tscn" id="8_df41y"]
 
 [sub_resource type="Environment" id="Environment_vy0rh"]
@@ -15,6 +15,10 @@ fog_enabled = true
 size = Vector3(4, 0.5, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yhapo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ntt5"]
+
+[sub_resource type="Theme" id="Theme_bd5je"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.25)
@@ -1043,14 +1047,17 @@ theme_override_font_sizes/font_size = 9
 text = "don't share without permission or smth"
 
 [node name="ColorRect" type="ColorRect" parent="Node"]
+material = SubResource("ShaderMaterial_3ntt5")
 offset_left = 128.0
 offset_top = 124.0
-offset_right = 131.0
-offset_bottom = 127.0
+offset_right = 129.0
+offset_bottom = 125.0
+theme = SubResource("Theme_bd5je")
 
 [node name="Player" parent="." instance=ExtResource("3_w8osi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0.75)
 disable_mode = 2
+floor_stop_on_slope = false
 step_bob_enabled = false
 jump_bob_enabled = false
 rotation_to_move = false

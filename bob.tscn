@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://yyl80xp4dob2"]
+
+[ext_resource type="PackedScene" uid="uid://bsm80ws48r1q1" path="res://gAEme/glb/bob.glb" id="1_iq748"]
+[ext_resource type="Shader" path="res://psx_lit.gdshader" id="2_j0n0g"]
+
+[sub_resource type="Curve" id="Curve_dwhpf"]
+_data = [Vector2(0.454545, 0.0315789), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_lx7lp"]
+curve = SubResource("Curve_dwhpf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3tnl"]
+render_priority = 0
+shader = ExtResource("2_j0n0g")
+shader_parameter/jitter = 0.747
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = true
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = SubResource("CurveTexture_lx7lp")
+
+[node name="bob" instance=ExtResource("1_iq748")]
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_d3tnl")

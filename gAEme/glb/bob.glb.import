@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c2ik4ced0bxw4"
-path="res://.godot/imported/stagelight.glb-884168f5430525a5a66088b9194af86a.scn"
+uid="uid://bsm80ws48r1q1"
+path="res://.godot/imported/bob.glb-f3ebdfde9059a2412ba32509a17aef7a.scn"
 
 [deps]
 
-source_file="res://gAEme/models/stagelight.glb"
-dest_files=["res://.godot/imported/stagelight.glb-884168f5430525a5a66088b9194af86a.scn"]
+source_file="res://gAEme/glb/bob.glb"
+dest_files=["res://.godot/imported/bob.glb-f3ebdfde9059a2412ba32509a17aef7a.scn"]
 
 [params]
 
