@@ -1042,6 +1042,12 @@ offset_bottom = 237.0
 theme_override_font_sizes/font_size = 9
 text = "don't share without permission or smth"
 
+[node name="ColorRect" type="ColorRect" parent="Node"]
+offset_left = 128.0
+offset_top = 124.0
+offset_right = 131.0
+offset_bottom = 127.0
+
 [node name="Player" parent="." instance=ExtResource("3_w8osi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0.75)
 disable_mode = 2
@@ -1053,4 +1059,7 @@ rotation_to_move = false
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 4.5, 1.75, 0)
 
 [node name="barrel" parent="." instance=ExtResource("8_df41y")]
-transform = Transform3D(0.5238, 0, 0, 0, 0.5238, 0, 0, 0, 0.5238, 2.64548, 1.20346, -2.61268)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.64548, 1.20346, -2.61268)
+
+[node name="barrel2" parent="." instance=ExtResource("8_df41y")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.39548, 1.95346, 9.13732)
