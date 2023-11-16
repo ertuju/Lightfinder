@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8gn47s3vhw4t"]
+[gd_scene load_steps=14 format=3 uid="uid://b8gn47s3vhw4t"]
 
 [ext_resource type="ArrayMesh" uid="uid://cn4agsrpvu4c6" path="res://addons/kaykit_prototype_bits/Assets/obj/Floor.obj" id="1_sjfr3"]
 [ext_resource type="PackedScene" uid="uid://2oxdgu03lnbk" path="res://addons/character-controller/example/main/player.tscn" id="3_w8osi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://bkud7opk6rm1y" path="res://concrete.tres" id="6_40bnd"]
 [ext_resource type="PackedScene" uid="uid://c2ik4ced0bxw4" path="res://gAEme/glb/stagelight.glb" id="6_nes0j"]
 [ext_resource type="PackedScene" uid="uid://gp4fw66qnvs6" path="res://gAEme/models/barrel.tscn" id="8_df41y"]
+[ext_resource type="PackedScene" uid="uid://yyl80xp4dob2" path="res://gAEme/models/bob.tscn" id="8_u3up7"]
 
 [sub_resource type="Environment" id="Environment_vy0rh"]
 fog_enabled = true
@@ -494,6 +495,14 @@ light_specular = 0.535
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 4)
 light_energy = 0.838
+light_indirect_energy = 1.485
+light_volumetric_fog_energy = 1.485
+light_size = 0.145
+light_specular = 0.535
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 2, 18.75)
+light_energy = 0.228
 light_indirect_energy = 1.485
 light_volumetric_fog_energy = 1.485
 light_size = 0.145
@@ -1070,3 +1079,12 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.64548, 1.20346, -2
 
 [node name="barrel2" parent="." instance=ExtResource("8_df41y")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.39548, 1.95346, 9.13732)
+
+[node name="barrel3" parent="." instance=ExtResource("8_df41y")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.39548, 0.95346, 17.6373)
+
+[node name="barrel4" parent="." instance=ExtResource("8_df41y")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.39548, 2.45346, 17.6373)
+
+[node name="bob" parent="." instance=ExtResource("8_u3up7")]
+transform = Transform3D(0.608528, 0, -0.608528, 0, 0.84, 0, 0.608528, 0, 0.608528, 1.5, 2.5, 18.5)
