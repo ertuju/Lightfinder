@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck376e56pyed3"]
+
+[ext_resource type="PackedScene" uid="uid://4rn80h4pa2mp" path="res://gAEme/models/barrel.glb" id="1_pc8kf"]
+[ext_resource type="Shader" path="res://psx_unlit.gdshader" id="2_qu2ox"]
+[ext_resource type="Texture2D" uid="uid://b4efjlsc405w8" path="res://gAEme/textures/barrel_BarrelTEXT2.png" id="3_bli76"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wuihb"]
+render_priority = 0
+shader = ExtResource("2_qu2ox")
+shader_parameter/jitter = 0.635
+shader_parameter/jitter_z_coordinate = true
+shader_parameter/jitter_depth_independent = true
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/albedo_color = Color(0.298039, 0.298039, 0.298039, 1)
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/texture_size = Vector2(1, 1)
+shader_parameter/albedo = ExtResource("3_bli76")
+
+[node name="barrel" instance=ExtResource("1_pc8kf")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_wuihb")
