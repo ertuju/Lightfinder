@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Dirt"
+config/name="thing"
 run/main_scene="res://gAEme/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/image="res://gAEme/textures/barrel_BarrelTEXT2.png"
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://gAEme/textures/gameicon.png"
 
 [display]
 
@@ -64,5 +64,5 @@ mouse1={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=2
 textures/decals/filter=0
