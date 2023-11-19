@@ -11,6 +11,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Control"]
+layout_mode = 0
 offset_right = 45.0
 offset_bottom = 31.0
 text = "start"
@@ -18,6 +19,7 @@ flat = true
 script = ExtResource("1_brwr0")
 
 [node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
 offset_top = 193.0
 offset_right = 45.0
 offset_bottom = 224.0
@@ -25,6 +27,7 @@ text = "close"
 flat = true
 
 [node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 199.0
 offset_right = 256.0
 offset_bottom = 31.0
