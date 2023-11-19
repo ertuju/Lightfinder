@@ -1,4 +1,4 @@
 extends Node
 
 func _on_pressed():
-	load("res://main.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")
