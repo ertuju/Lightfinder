@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d14o1nbe3ix0l"]
 
-[ext_resource type="Script" path="res://script/start.gd" id="1_brwr0"]
+[ext_resource type="Script" path="res://gAEme/scripts/start.gd" id="1_brwr0"]
 
 [node name="menu" type="Node3D"]
 

@@ -7,7 +7,8 @@
 [ext_resource type="Material" uid="uid://bkud7opk6rm1y" path="res://concrete.tres" id="6_40bnd"]
 [ext_resource type="PackedScene" uid="uid://gp4fw66qnvs6" path="res://gAEme/models/barrel.tscn" id="8_df41y"]
 [ext_resource type="PackedScene" uid="uid://yyl80xp4dob2" path="res://gAEme/models/bob.tscn" id="8_u3up7"]
-[ext_resource type="PackedScene" path="res://gAEme/glb/wall.glb" id="9_ej6ck"]
+[ext_resource type="PackedScene" uid="uid://blnkmgamcv21j" path="res://gAEme/models/east.dae" id="9_fxkx1"]
+[ext_resource type="Script" path="res://gAEme/scripts/quit.gd" id="9_xoj4r"]
 
 [sub_resource type="Environment" id="Environment_vy0rh"]
 fog_enabled = true
@@ -20,9 +21,6 @@ size = Vector3(4, 0.5, 4)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ntt5"]
 
 [sub_resource type="Theme" id="Theme_bd5je"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5tn5d"]
-size = Vector3(1, 8.01702, 8.00775)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.25)
@@ -332,6 +330,17 @@ metadata/_edit_group_ = true
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor29"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_6mm4o")
+
+[node name="Floor47" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 7.875, 4, 0)
+mesh = ExtResource("1_sjfr3")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_6mm4o")
 
@@ -1015,16 +1024,6 @@ mesh = ExtResource("5_epy6x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bricc17/StaticBody3D"]
 shape = SubResource("BoxShape3D_yhapo")
 
-[node name="Bricc62" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 1.13687e-13, 0, 4, 0, 1.06581e-14, 0, 4, 6.45356, 2, 0)
-material_override = ExtResource("5_abt2d")
-mesh = ExtResource("5_epy6x")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Bricc62"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bricc62/StaticBody3D"]
-shape = SubResource("BoxShape3D_yhapo")
-
 [node name="Bricc32" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.5, 0, 3.49691e-07, 0, 4, 0, -4.37114e-08, 0, -4, 6.125, 6, 0)
 material_override = ExtResource("5_abt2d")
@@ -1061,12 +1060,12 @@ material_override = ExtResource("6_40bnd")
 mesh = ExtResource("5_epy6x")
 
 [node name="Bricc60" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 7.48, 0, 0, 0, 1, 5.875, 4, 2.25)
+transform = Transform3D(1, 0, 0, 0, 7.48, 0, 0, 0, 1, 6.125, 4, 2)
 material_override = ExtResource("6_40bnd")
 mesh = ExtResource("5_epy6x")
 
 [node name="Bricc61" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 7.48, 0, 0, 0, 1, 5.875, 4, -1.75)
+transform = Transform3D(1, 0, 0, 0, 7.48, 0, 0, 0, 1, 5.875, 4, -2)
 material_override = ExtResource("6_40bnd")
 mesh = ExtResource("5_epy6x")
 
@@ -1131,15 +1130,6 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.39548, 2.45346, 17
 [node name="bob" parent="." instance=ExtResource("8_u3up7")]
 transform = Transform3D(0.608528, 0, -0.608528, 0, 0.84, 0, 0.608528, 0, 0.608528, 1.5, 2.5, 18.5)
 
-[node name="wall" parent="." instance=ExtResource("9_ej6ck")]
-transform = Transform3D(0.296641, 0, 0, 0, 0.500722, 0, 0, 0, 0.501992, 6.125, 2, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="wall"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_5tn5d")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 light_color = Color(0, 0, 0, 1)
 light_energy = 0.0
@@ -1147,3 +1137,9 @@ light_indirect_energy = 0.0
 light_negative = true
 light_bake_mode = 1
 sky_mode = 2
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("9_xoj4r")
+
+[node name="east" parent="." instance=ExtResource("9_fxkx1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.25, 4, 0)
